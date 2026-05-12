@@ -39,6 +39,8 @@ jobs:
             > ~/.terraform.d/credentials.tfrc.json
 
       - name: Generate Terraform module SDK
+        id: generate-sdk
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -47,10 +49,14 @@ jobs:
             2026.512.2 \
             string-formatter
 
-      - name: Show generated ModuleArgs properties
+      - name: Show generated Module.cs
         run: |
           echo "--- Module.cs ---"
           cat sdks/string-formatter/Module.cs
+
+      - name: Fail if SDK generation failed
+        if: steps.generate-sdk.outcome == 'failure'
+        run: exit 1
 
       - name: Pulumi Up
         uses: pulumi/actions@v6
