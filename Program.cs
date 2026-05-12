@@ -3,7 +3,7 @@ using Pulumi;
 
 // Generated SDK namespace produced by:
 //   pulumi package add terraform-module \
-//     app.terraform.io/BS_INC/string-formatter/BPS \
+//     app.terraform.io/BS_INC/string-formatter/bps \
 //     2026.512.2 \
 //     string-formatter
 //

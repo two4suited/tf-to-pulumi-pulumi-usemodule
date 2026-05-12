@@ -34,7 +34,7 @@ jobs:
           TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_APP_TERRAFORM_IO }}
         run: |
           pulumi package add terraform-module \
-            app.terraform.io/BS_INC/string-formatter/BPS \
+            app.terraform.io/BS_INC/string-formatter/bps \
             2026.512.2 \
             string-formatter
 
