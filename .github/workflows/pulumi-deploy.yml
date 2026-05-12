@@ -29,9 +29,20 @@ jobs:
           terraform_version: "1.9.8"
           terraform_wrapper: false
 
+      - name: Configure Terraform credentials
+        run: |
+          mkdir -p ~/.terraform.d
+          cat > ~/.terraform.d/credentials.tfrc.json << EOF
+          {
+            "credentials": {
+              "app.terraform.io": {
+                "token": "${{ secrets.TF_TOKEN_APP_TERRAFORM_IO }}"
+              }
+            }
+          }
+          EOF
+
       - name: Generate Terraform module SDK
-        env:
-          TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_APP_TERRAFORM_IO }}
         run: |
           pulumi package add terraform-module \
             app.terraform.io/BS_INC/string-formatter/bps \
