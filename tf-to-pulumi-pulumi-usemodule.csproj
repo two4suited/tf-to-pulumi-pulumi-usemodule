@@ -5,6 +5,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <RootNamespace>StringFormatterNameFormatter</RootNamespace>
+    <!-- Only audit direct dependencies; transitive vulnerable packages are owned by Pulumi SDK -->
+    <NuGetAuditMode>direct</NuGetAuditMode>
   </PropertyGroup>
 
   <ItemGroup>
