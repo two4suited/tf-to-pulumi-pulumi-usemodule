@@ -26,6 +26,7 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
+          terraform_version: "1.9.8"
           terraform_wrapper: false
 
       - name: Generate Terraform module SDK
@@ -33,9 +34,9 @@ jobs:
           TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_APP_TERRAFORM_IO }}
         run: |
           pulumi package add terraform-module \
-            app.terraform.io/BS_INC/string-formatter/BPS//modules/name-formatter \
+            app.terraform.io/BS_INC/string-formatter/BPS \
             2026.512.2 \
-            name-formatter
+            string-formatter
 
       - name: Pulumi Up
         uses: pulumi/actions@v6

@@ -33,14 +33,14 @@ Run this once (or whenever the module version changes) to generate the local C# 
 
 ```bash
 pulumi package add terraform-module \
-  app.terraform.io/BS_INC/string-formatter/BPS//modules/name-formatter \
+  app.terraform.io/BS_INC/string-formatter/BPS \
   2026.512.2 \
-  name-formatter
+  string-formatter
 ```
 
 This will:
 1. Download and introspect the Terraform module.
-2. Generate a strongly-typed C# SDK under `sdks/name-formatter/dotnet/`.
+2. Generate a strongly-typed C# SDK under `sdks/string-formatter/dotnet/`.
 3. Add a `<ProjectReference>` to `StringFormatterNameFormatter.csproj` automatically.
 
 ## Usage
