@@ -58,6 +58,7 @@ nunit-*.xml
 
 # Pulumi generated Terraform module SDK (regenerate with: pulumi package add terraform-module ...)
 sdks/
+src/sdks/
 
 # Pulumi local state / stack cache
 .pulumi/
