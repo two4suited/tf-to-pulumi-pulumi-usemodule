@@ -56,7 +56,7 @@ jobs:
           echo "--- module lookup ---"
           HTTP_CODE=$(curl -sS -o /tmp/module.json -w "%{http_code}" \
             -H "Authorization: Bearer $TF_TOKEN" \
-            "https://app.terraform.io/api/registry/v1/modules/BS_INC/string-formatter/bps/2026.512.2")
+            "https://app.terraform.io/api/registry/v1/modules/BS_INC/stringformatter/bps/2026.512.2")
           echo "HTTP Status: $HTTP_CODE"
           jq . /tmp/module.json
           if [ "$HTTP_CODE" != "200" ]; then
@@ -67,7 +67,7 @@ jobs:
       - name: Generate Terraform module SDK
         run: |
           pulumi package add terraform-module \
-            app.terraform.io/BS_INC/string-formatter/bps \
+            app.terraform.io/BS_INC/stringformatter/bps \
             2026.512.2 \
             string-formatter
 
