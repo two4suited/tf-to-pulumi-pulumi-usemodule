@@ -33,7 +33,7 @@ Run this once (or whenever the module version changes) to generate the local C# 
 
 ```bash
 pulumi package add terraform-module \
-  app.terraform.io/BS_INC/stringformatter/bps \
+  app.terraform.io/BS_INC/stringformatter/bps//modules/name-formatter \
   2026.512.2 \
   string-formatter
 ```
