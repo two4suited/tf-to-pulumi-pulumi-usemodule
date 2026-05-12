@@ -11,6 +11,6 @@ return await Deployment.RunAsync(() =>
 
     return new Dictionary<string, object?>
     {
-        ["wholeName"] = nameFormatter.WholeName,
+        ["WholeName"] = nameFormatter.WholeName,
     };
 });
