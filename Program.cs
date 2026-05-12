@@ -5,8 +5,8 @@ return await Deployment.RunAsync(() =>
 {
     var nameFormatter = new NameFormatterModule("name-formatter", new NameFormatterArgs
     {
-        FirstName = "Jane",
-        LastName  = "Doe",
+        FirstName = "Brian",
+        LastName  = "Sheridan",
     });
 
     return new Dictionary<string, object?>
