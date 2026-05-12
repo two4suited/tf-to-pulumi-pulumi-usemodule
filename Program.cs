@@ -10,7 +10,7 @@ using Pulumi;
 // Pulumi derives the C# namespace from the package name ("string-formatter" → "StringFormatter").
 // Run the command above before building; it will generate the SDK under sdks/string-formatter/
 // and add a ProjectReference to this .csproj automatically.
-using Pulumi.StringFormatter;
+using Pulumi.NameFormatter;
 
 return await Deployment.RunAsync(() =>
 {

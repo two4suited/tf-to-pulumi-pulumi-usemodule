@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="sdks\string-formatter\Pulumi.StringFormatter.csproj" />
+    <ProjectReference Include="sdks\name-formatter\Pulumi.NameFormatter.csproj" />
   </ItemGroup>
 
 </Project>

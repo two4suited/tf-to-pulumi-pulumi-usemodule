@@ -46,13 +46,13 @@ jobs:
         run: |
           pulumi package add terraform-module \
             app.terraform.io/BS_INC/stringformatter/bps//modules/name-formatter \
-            2026.512.2 \
-            string-formatter
+            2026.512.3 \
+            name-formatter
 
       - name: Show generated Module.cs
         run: |
           echo "--- Module.cs ---"
-          cat sdks/string-formatter/Module.cs
+          cat sdks/name-formatter/Module.cs
 
       - name: Fail if SDK generation failed
         if: steps.generate-sdk.outcome == 'failure'

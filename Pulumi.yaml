@@ -1,3 +1,11 @@
 name: string-formatter-name-formatter
 runtime: dotnet
 description: Pulumi C# stack consuming the Terraform string-formatter/name-formatter module
+packages:
+  name-formatter:
+    source: terraform-module
+    version: 0.2.0
+    parameters:
+      - app.terraform.io/BS_INC/stringformatter/bps//modules/name-formatter
+      - 2026.512.3
+      - name-formatter
