@@ -39,6 +39,8 @@ jobs:
             > ~/.terraform.d/credentials.tfrc.json
 
       - name: Generate Terraform module SDK
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pulumi package add terraform-module \
             app.terraform.io/BS_INC/stringformatter/bps \
