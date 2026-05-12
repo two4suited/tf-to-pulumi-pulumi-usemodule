@@ -30,17 +30,13 @@ jobs:
           terraform_wrapper: false
 
       - name: Configure Terraform credentials
+        env:
+          TF_TOKEN: ${{ secrets.TF_TOKEN_APP_TERRAFORM_IO }}
         run: |
           mkdir -p ~/.terraform.d
-          cat > ~/.terraform.d/credentials.tfrc.json << EOF
-          {
-            "credentials": {
-              "app.terraform.io": {
-                "token": "${{ secrets.TF_TOKEN_APP_TERRAFORM_IO }}"
-              }
-            }
-          }
-          EOF
+          jq -n --arg token "$TF_TOKEN" \
+            '{"credentials":{"app.terraform.io":{"token":$token}}}' \
+            > ~/.terraform.d/credentials.tfrc.json
 
       - name: Generate Terraform module SDK
         run: |
