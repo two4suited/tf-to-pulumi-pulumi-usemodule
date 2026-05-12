@@ -38,6 +38,27 @@ jobs:
             '{"credentials":{"app.terraform.io":{"token":$token}}}' \
             > ~/.terraform.d/credentials.tfrc.json
 
+      - name: Validate Terraform credentials & module exists
+        env:
+          TF_TOKEN: ${{ secrets.TF_TOKEN_APP_TERRAFORM_IO }}
+        run: |
+          echo "--- credentials file ---"
+          # Show the file is valid JSON (token value is redacted by GitHub automatically)
+          jq 'del(.credentials."app.terraform.io".token) + {"credentials":{"app.terraform.io":{"token":"<redacted>"}}}' \
+            ~/.terraform.d/credentials.tfrc.json
+
+          echo "--- whoami (TFC API auth check) ---"
+          curl --fail-with-body -sS \
+            -H "Authorization: Bearer $TF_TOKEN" \
+            https://app.terraform.io/api/v2/account/details \
+            | jq '{username: .data.attributes.username, email: .data.attributes.email}'
+
+          echo "--- module lookup ---"
+          curl --fail-with-body -sS \
+            -H "Authorization: Bearer $TF_TOKEN" \
+            "https://app.terraform.io/api/registry/v1/modules/BS_INC/string-formatter/bps/2026.512.2" \
+            | jq '{id: .id, source: .source, version: .version}'
+
       - name: Generate Terraform module SDK
         run: |
           pulumi package add terraform-module \
