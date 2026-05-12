@@ -1,0 +1,10 @@
+{
+  "resource": true,
+  "name": "terraform-module",
+  "version": "0.2.0",
+  "parameterization": {
+    "name": "name-formatter",
+    "version": "2026.512.3",
+    "value": "ewogICJtb2R1bGUiOiAiYXBwLnRlcnJhZm9ybS5pby9CU19JTkMvc3RyaW5nZm9ybWF0dGVyL2Jwcy8vbW9kdWxlcy9uYW1lLWZvcm1hdHRlciIsCiAgInZlcnNpb24iOiAiMjAyNi41MTIuMyIsCiAgInBhY2thZ2VOYW1lIjogIm5hbWUtZm9ybWF0dGVyIgp9"
+  }
+}
