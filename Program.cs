@@ -24,10 +24,8 @@ return await Deployment.RunAsync(() =>
         Last_name  = "Doe",
     });
 
-    // Expose any module outputs as Pulumi stack outputs.
-    // Replace the keys/values below with the actual output names declared by the module.
     return new Dictionary<string, object?>
     {
-        // Example: ["formattedName"] = nameFormatter.FormattedName,
+        ["wholeName"] = nameFormatter.Whole_name,
     };
 });
