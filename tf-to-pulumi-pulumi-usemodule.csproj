@@ -19,4 +19,8 @@
     <!-- ProjectReference to the generated SDK is added automatically by: pulumi package add terraform-module ... -->
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="sdks\string-formatter\Pulumi.StringFormatter.csproj" />
+  </ItemGroup>
+
 </Project>

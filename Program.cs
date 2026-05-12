@@ -20,8 +20,8 @@ return await Deployment.RunAsync(() =>
     //   last_name   string  The person's last name
     var nameFormatter = new Module("string-formatter", new ModuleArgs
     {
-        FirstName = "Jane",
-        LastName  = "Doe",
+        First_name = "Jane",
+        Last_name  = "Doe",
     });
 
     // Expose any module outputs as Pulumi stack outputs.
