@@ -1,4 +1,4 @@
-name: string-formatter-name-formatter
+name: tf-to-pulumi-pulumi-usemodule
 runtime: dotnet
 description: Pulumi C# stack consuming the Terraform string-formatter/name-formatter module
 packages:
