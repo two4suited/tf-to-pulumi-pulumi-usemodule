@@ -56,9 +56,6 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 
-# Pulumi generated Terraform module SDK (regenerate with: pulumi package add terraform-module ...)
-sdks/
-
 # Pulumi local state / stack cache
 .pulumi/
 

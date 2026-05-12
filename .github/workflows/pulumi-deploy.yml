@@ -23,30 +23,6 @@ jobs:
       - name: Install Pulumi CLI
         uses: pulumi/actions@v6
 
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: "1.9.8"
-          terraform_wrapper: false
-
-      - name: Configure Terraform credentials
-        env:
-          TF_TOKEN: ${{ secrets.TF_TOKEN_APP_TERRAFORM_IO }}
-        run: |
-          mkdir -p ~/.terraform.d
-          jq -n --arg token "$TF_TOKEN" \
-            '{"credentials":{"app.terraform.io":{"token":$token}}}' \
-            > ~/.terraform.d/credentials.tfrc.json
-
-      - name: Generate Terraform module SDK
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pulumi package add terraform-module \
-            app.terraform.io/BS_INC/stringformatter/bps//modules/name-formatter \
-            2026.512.3 \
-            name-formatter
-
       - name: Pulumi Up
         uses: pulumi/actions@v6
         with:
