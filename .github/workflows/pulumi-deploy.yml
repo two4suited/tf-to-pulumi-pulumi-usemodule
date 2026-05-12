@@ -45,6 +45,11 @@ jobs:
             2026.512.2 \
             string-formatter
 
+      - name: Show generated ModuleArgs properties
+        run: |
+          echo "--- Module.cs ---"
+          cat sdks/string-formatter/Module.cs
+
       - name: Pulumi Up
         uses: pulumi/actions@v6
         with:

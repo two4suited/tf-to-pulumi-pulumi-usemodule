@@ -8,18 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Exclude generated SDK source files from this project's compilation.
+         They are compiled by their own .csproj and referenced via ProjectReference below. -->
+    <Compile Remove="sdks/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- Core Pulumi SDK -->
     <PackageReference Include="Pulumi" Version="3.*" />
-    <!--
-      After running:
-        pulumi package add terraform-module \
-          app.terraform.io/BS_INC/string-formatter/BPS//modules/name-formatter \
-          2026.512.2 \
-          name-formatter
-
-      Pulumi will automatically add a <ProjectReference> here pointing to the
-      generated SDK under sdks/name-formatter/dotnet/
-    -->
+    <!-- ProjectReference to the generated SDK is added automatically by: pulumi package add terraform-module ... -->
   </ItemGroup>
 
 </Project>
