@@ -1,6 +1,3 @@
 name: string-formatter-name-formatter
-runtime:
-  name: dotnet
-  options:
-    binary: tf-to-pulumi-pulumi-usemodule.csproj
+runtime: dotnet
 description: Pulumi C# stack consuming the Terraform string-formatter/name-formatter module
