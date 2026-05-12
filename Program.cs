@@ -18,7 +18,7 @@ return await Deployment.RunAsync(() =>
     // The strongly-typed Args class is generated from the module's variable declarations:
     //   first_name  string  The person's first name
     //   last_name   string  The person's last name
-    var nameFormatter = new Module("string-formatter", new ModuleArgs
+    var nameFormatter = new Module("name-formatter", new ModuleArgs
     {
         First_name = "Jane",
         Last_name  = "Doe",
